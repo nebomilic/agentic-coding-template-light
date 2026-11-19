@@ -31,6 +31,27 @@ Stop and ask rather than deciding when:
   hours" is technical; "users may see day-old data" is a product decision in
   technical clothing.
 
+## Scope of a change
+
+- Build the smallest thing that satisfies the PRD. Generality no current caller
+  needs is a guess about the future, and it has to be maintained whether the
+  guess was right or not.
+- No abstraction until there is a second caller. One caller behind an interface
+  is indirection with nothing on the other side.
+- No configuration option until something needs to configure it.
+- Prefer what the language, the runtime and the existing dependencies already
+  do. Reaching for something new to do what the platform does is the common
+  failure, not the exception.
+
+## Dependencies
+
+A dependency is cheap to add and expensive to remove, which makes it exactly
+the kind of decision that needs an ADR.
+
+Before adding one, say what in the standard library or the existing
+dependencies was considered, and why it does not do the job. If that cannot be
+answered, the dependency is not justified yet.
+
 ## Skills
 
 `.claude/skills/` holds procedures you run on request. They are not rules that
@@ -72,16 +93,14 @@ Say so rather than looking for a way around.
 
 - Test observable behaviour through the public interface. A test that reaches
   into internals blocks the refactors tests exist to enable.
-- Use the lowest layer that can observe the behaviour honestly. Unit when it is
-  genuinely local; integration when the behaviour only exists in the
-  interaction — a query, a transaction, a request path.
-- Mock only what the project does not own: third-party services, the clock, the
-  network. Needing to mock an internal module means the test belongs a layer up.
+- Use the lowest layer that can observe the behaviour honestly, and mock only
+  what the project does not own — third-party services, the clock, the network.
+  Needing to mock an internal module means the test belongs a layer up.
 - Before finishing, ask what change to the code under test would break this
-  test. If the honest answer is "none a user would notice", it asserts the
+  test. If the answer is "none a user would notice", it asserts the
   implementation back to itself. Delete it and test the behaviour.
-- No coverage target, deliberately. Do not weaken or delete a failing test to
-  make a change pass — say which assumption changed and why.
+- No coverage target. Never weaken or delete a failing test to make a change
+  pass; say which assumption changed and why.
 
 ## Conventions
 
@@ -90,6 +109,14 @@ Say so rather than looking for a way around.
   No wikilinks. Link text names the document, never "this ADR" or "see here".
 - Never commit secrets, credentials, tokens or personal data, including in
   fixtures, example configs and documentation examples.
+
+## Reporting
+
+Say what changed and where. Do not narrate the steps or summarise what the diff
+already shows.
+
+State what is uncertain, incomplete or assumed in full sentences. That is the
+part worth reading, and compressing it costs more than it saves.
 
 ## Definition of done
 
