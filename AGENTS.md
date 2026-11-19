@@ -31,6 +31,30 @@ Stop and ask rather than deciding when:
   hours" is technical; "users may see day-old data" is a product decision in
   technical clothing.
 
+## Skills
+
+`.claude/skills/` holds procedures you run on request. They are not rules that
+apply always; nothing here is loaded until it is invoked.
+
+### grill-me
+
+Interrogation before work, never during it. Run it when:
+
+- An idea has no PRD yet. Grill until the problem, the user, the outcome and
+  what is out of scope can be stated without guessing.
+- A decision would be expensive to reverse and no ADR covers it. Grill the
+  alternatives and the revisit trigger, then write the ADR.
+- A task implies behaviour no PRD describes. That is the stop rule above,
+  answered properly instead of with a single question.
+
+Working alone, this skill is standing in for the colleague who would otherwise
+ask these questions. It is also the one place where spending a conversation is
+cheaper than the rebuild it prevents.
+
+Skip it when a PRD or an accepted ADR already answers the question, when the
+cause is obvious and the fix is small, or when being wrong costs less than the
+grilling. Do not grill mid-implementation.
+
 ## Writing documents
 
 - **PRD** — problem and outcome only. A PRD that names a framework, a database

@@ -16,6 +16,7 @@ dividing work between people has been stripped out.
 | `docs/prd/` | What is being built and why |
 | `docs/adr/` | Technical decisions and what they commit you to |
 | `AGENTS.md` | Rules for AI agents working in this repository |
+| `.claude/skills/` | Procedures agents run on request |
 | `.claude/settings.json` | Paths agents may not write to |
 
 Code goes wherever the stack wants it. This template does not prescribe a
