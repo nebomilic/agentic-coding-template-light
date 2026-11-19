@@ -13,6 +13,7 @@ dividing work between people has been stripped out.
 
 | Path | What lives here |
 |---|---|
+| `docs/product.md` | What the product is, and what it will never do |
 | `docs/prd/` | What is being built and why |
 | `docs/adr/` | Technical decisions and what they commit you to |
 | `AGENTS.md` | Rules for AI agents working in this repository |
@@ -38,8 +39,9 @@ Tickets and notes link *into* this repository. Nothing here restates them.
 ## Getting started
 
 1. Read `AGENTS.md`.
-2. Skim `docs/adr/README.md` for decisions already settled.
-3. Read the PRD for whatever you are about to touch.
+2. Read `docs/product.md`. One page, and it decides what gets said no to.
+3. Skim `docs/adr/README.md` for decisions already settled.
+4. Read the PRD for whatever you are about to touch.
 
 ## Status
 

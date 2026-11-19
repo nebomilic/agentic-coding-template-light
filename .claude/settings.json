@@ -2,7 +2,8 @@
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "deny": [
-      "Edit(/docs/prd/**)"
+      "Edit(/docs/prd/**)",
+      "Edit(/docs/product.md)"
     ]
   }
 }

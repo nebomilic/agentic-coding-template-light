@@ -18,6 +18,15 @@ scope. Readable by someone who has not been in your head.
 The out-of-scope section is the one that pays off. Unstated scope grows
 quietly and gets noticed when the deadline has already passed.
 
+## Alignment
+
+Every PRD names the part of [the product document](../product.md) it serves. A
+PRD that cannot means one of two things, and it is worth knowing which: the
+feature does not belong, or the product document has gone stale and needs the
+change recorded in its own table.
+
+Neither is settled by writing the PRD anyway.
+
 ## What it must not hold
 
 A solution. No frameworks, no databases, no protocols, no schema. Specifying

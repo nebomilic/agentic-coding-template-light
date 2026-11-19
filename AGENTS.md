@@ -2,6 +2,7 @@
 
 ## Where things are
 
+- `docs/product.md` — what the product is, and what it will never do.
 - `docs/prd/` — what is being built and why. Numbered, living.
 - `docs/adr/` — technical decisions. Numbered, immutable, superseded rather
   than edited.
@@ -78,14 +79,19 @@ grilling. Do not grill mid-implementation.
 
 ## Writing documents
 
-- **PRD** — problem and outcome only. A PRD that names a framework, a database
+- **`docs/product.md`** — what the product is and what it will never do. Read
+  it before discussing a PRD; never write it. When a requested feature serves
+  nothing in it, say so: either the feature does not belong or the document has
+  gone stale, and both are decisions for a human.
+- **PRD** — problem and outcome only. Name the part of `docs/product.md` it
+  serves. A PRD that names a framework, a database
   or a protocol has drifted into ADR territory. Draft one on request, never
   unprompted.
 - **ADR** — write one whenever a decision would be expensive to reverse. Use
   `docs/adr/TEMPLATE.md`, four-digit numbering. Never edit an accepted ADR;
   write one that supersedes it and update both index rows.
 
-`docs/prd/` is write-blocked in `.claude/settings.json`. Hitting that block
+`docs/prd/` and `docs/product.md` are write-blocked in `.claude/settings.json`. Hitting that block
 means the work has drifted from implementing a requirement into rewriting it.
 Say so rather than looking for a way around.
 
