@@ -18,7 +18,7 @@ dividing work between people has been stripped out.
 | `docs/adr/` | Technical decisions and what they commit you to |
 | `AGENTS.md` | Rules for AI agents working in this repository |
 | `.claude/skills/` | Procedures agents run on request |
-| `.claude/settings.json` | Paths agents may not write to |
+| `.claude/settings.json` | Paths agents may not read or write |
 
 Code goes wherever the stack wants it. This template does not prescribe a
 layout; add one and say so here once it exists.

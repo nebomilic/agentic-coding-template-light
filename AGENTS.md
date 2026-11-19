@@ -113,8 +113,20 @@ Say so rather than looking for a way around.
 - Filenames under `docs/`: zero-padded, kebab-case, `0007-short-title.md`.
 - Links are relative with no `./` prefix: `[ADR-0001](0001-record-architecture-decisions.md)`.
   No wikilinks. Link text names the document, never "this ADR" or "see here".
+
+## Secrets
+
 - Never commit secrets, credentials, tokens or personal data, including in
   fixtures, example configs and documentation examples.
+- `.env` and `.env.*` are blocked for reading and editing in
+  `.claude/settings.json`; `.env.example` is not. Read `.env.example` to learn
+  what configuration exists. To learn whether a value is set, ask.
+- Code that needs a new variable adds its name to `.env.example` with a
+  placeholder value, in the same change.
+- The block stops Claude's file tools and the shell commands it recognises. A
+  script that loads the file itself, or a command that prints the environment,
+  gets around it. Writing either to see a value is the same as reading the
+  file. Say what you need instead.
 
 ## Reporting
 

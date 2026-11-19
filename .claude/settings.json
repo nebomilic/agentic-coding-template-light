@@ -3,7 +3,13 @@
   "permissions": {
     "deny": [
       "Edit(/docs/prd/**)",
-      "Edit(/docs/product.md)"
+      "Edit(/docs/product.md)",
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(!.env.example)",
+      "Edit(.env)",
+      "Edit(.env.*)",
+      "Edit(!.env.example)"
     ]
   }
 }
